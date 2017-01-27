@@ -1,0 +1,71 @@
+img{width:50%;}
+
+.modalWindow{
+
+    background-color: rgba(227, 212, 212, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: block;
+    z-index: 2;
+    transition: 0.3s linear all;
+    animation: fadeIn_animation 1s linear;
+
+}
+.modalHidden {
+    display: none;
+}
+@keyframes fadeIn_animation {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+.showing-modal {
+  overflow: hidden;
+}
+.modalContent {
+  background-color: rgba(227, 212, 212, 0.84);
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+    overflow: auto;
+    text-align: center;
+    
+    
+}
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeButton :hover,
+.closeButton :focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addBtn {
+    margin-bottom: 4px;
+}
+textarea {
+    resize: vertical;
+}
+form .ng-invalid.ng-dirty {
+    background-color: lightpink;
+}
+
+
+form .ng-valid.ng-dirty {
+    background-color: lightgreen;
+}
+
+

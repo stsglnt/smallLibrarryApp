@@ -1,0 +1,82 @@
+<button class="btn btn-primary addBtn" ng-click="updateBook()">Add book</button>
+<div class="panel panel-default" ng-init="getBook()">
+ <div  ng-repeat="oneBook in book">
+  <div class="panel-heading" >
+    <h1 class="panel-title"><b>{{oneBook.title}}</b></h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img ng-src="{{oneBook.image_url}}">
+      </div>
+      <div class="col-md-8">
+        
+        <ul class="list-group">
+          <li class="list-group-item">Genre: {{oneBook.genre}}</li>
+          <li class="list-group-item">Publisher: {{oneBook.publisher}}</li>
+          <li class="list-group-item">Pages: {{oneBook.pages}}</li>
+        </ul>
+        <p>Desciption: {{oneBook.description}}</p>
+        <a target="_blank" href="{{oneBook.buy_url}}" class="btn btn-primary">Buy on Amazon</a>
+        <button class="btn btn-info" ng-click="updateBook(oneBook)" id="open ">Edit</button>  
+        <button class="btn btn-danger" ng-click="removeBook(oneBook)" id="open ">Delete</button>  
+      
+   
+     
+      </div>
+    </div>
+  </div>
+  <hr>
+  </div>
+</div>
+    
+
+
+        
+
+ 
+
+<div id="modalWindow" class= "modalHidden " > 
+<div class="modalContent ">
+      <div class="col-md-8 col-md-offset-2">
+       <form ng-submit="saveUpdate(anotherBook)" name="bookForm" novalidate >
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="anotherBook.title" placeholder="Title" required>
+        </div>
+       <div class="form-group">
+          <label>Genre</label>
+          <input type="text" class="form-control" ng-model="anotherBook.genre" placeholder="genre" required>
+        </div>
+       
+        <div class="form-group">
+          <label>Publisher</label>
+          <input type="text" class="form-control" ng-model="anotherBook.publisher" placeholder="Publisher">
+        </div>
+        <div class="form-group">
+          <label>Pages</label>
+          <input type="number" class="form-control" ng-model="anotherBook.pages" placeholder="Pages">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea class="form-control" ng-model="anotherBook.description" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" class="form-control" ng-model="anotherBook.image_url" placeholder="Image URL">
+        </div>
+        <div class="form-group">
+          <label>Buy URL</label>
+          <input type="text" class="form-control" ng-model="anotherBook.buy_url" placeholder="Buy URL">
+        </div>
+       
+        <button type="submit" class="btn btn-default" ng-disabled="bookForm.$invalid">Submit</button>
+        <button type="button" class="btn btn-default" ng-click="closeModal()">Cancel</button>
+        
+
+      </form>
+</div>
+    </div>
+</div>
+
+
